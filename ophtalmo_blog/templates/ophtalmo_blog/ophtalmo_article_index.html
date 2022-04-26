@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for ophtalmo_article in ophtalmo_articles %}
+        <h2> {{ophtalmo_article.title}} </h2>
+        <img src="{{ophtalmo_article.image.url}}" alt="{{ophtalmo_article.title}}", style="max-width: 250px;">
+    <a href="{{ophtalmo_article.get_absolute_url}}"> Voir l'article</a>
+    {% endfor %}
+
+{% endblock %}

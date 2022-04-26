@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{{ ophtalmo_article_detail.title }}</h2>
+<img src="{{ ophtalmo_article_detail.image.url }}" alt="{{ ophtalmo_article_detail.title }}", style="max-width: 250px;">
+<p> {{ ophtalmo_article_detail.photo_dedication }} </p>
+<p> {{ ophtalmo_article_detail.text }} </p>
+<p> Auteur: {{ ophtalmo_article_detail.auteur }} </p>
+<p> Date:{{ ophtalmo_article_detail.date }}</p>
+
+{% endblock %}

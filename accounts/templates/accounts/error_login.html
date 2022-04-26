@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+ {% block content %}
+    <h1> Connexion </h1>
+    <form method= "POST">
+        {% csrf_token %}
+        <p>
+            <label for="email">Email</label>
+            <input id="email" type="text" name="email">
+        </p>
+        <p>
+            <label for="password"> Mot de passe </label>
+            <input id="password" type="password" name="password">
+        </p>
+            <p style="color:#FF0000";>Le mail ou le password ne correspond pas à celui d'un utilisateur existant!</p>
+        <button type="submit" name="Connexion" value="Connexion">Connexion</button>
+        <button type="submit" name="Password" value="Password">Mot de Passe oublié ?</button>
+    </form>
+        
+ {% endblock %}

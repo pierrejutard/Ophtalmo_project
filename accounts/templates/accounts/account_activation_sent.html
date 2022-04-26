@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+    <head>
+        <meta charset="UTF-8">
+<title> OphtalmoSite </title>
+    </head>
+
+    <a href="{% url 'ophtalmo_center_index' %}">
+        <h1> Site ophtalmologique </h1>
+    </a>
+    <body>
+                  {% block sidebar %}
+                   <ul class="sidebar-nav">
+                       <li><a href="{% url 'ophtalmo_center_index' %}">Home</a></li>
+                       <li><a href="{% url 'ophtalmo_article_index' %}">Blog</a></li>
+                       <li><a href="{% url 'ophtalmo_center_index' %}">Annuaire</a></li>
+                       <li><a href="{% url 'ophtalmo_center_index' %}">Boutique</a></li>
+                   </ul>
+                  {% endblock %}
+
+        <a href="{% url 'login' %}">Connexion</a>
+        <a href="{% url 'register' %}">S'inscrire</a>
+    
+    {% block content %}
+        <p>Please confirm your email address to complete the registration. </p>
+    {% endblock %}
+
+    </body>
+</html>

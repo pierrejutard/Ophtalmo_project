@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load ratings %}
+
+{% block content %}
+
+<h2>{{ ophtalmo_center.name }}</h2>
+<img src="{{ ophtalmo_center.image.url }}" alt="{{ ophtalmo_center.name }}", style="max-width: 250px;">
+{% ratings ophtalmo_center %}
+<p> {{ ophtalmo_center.description }} </p>
+<p> Marque laser excimer: {{ ophtalmo_center.marque_laser_excimer }} </p>
+<p> Date de dernière maintenance laser excimer: {{ ophtalmo_center.date_maintenance_laser_excimer }} </p>
+<p> Marque laser femtoseconde: {{ ophtalmo_center.marque_laser_femtosecond }}</p>
+<p> Date de dernière maintenance laser femtoseconde: {{ ophtalmo_center.date_maintenance_laser_femtosecond }} </p>
+<p> <a href=" {{ ophtalmo_center.lien_site_internet }}"> Voir le site internet </a></p>
+
+{% endblock %}

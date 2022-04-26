@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load ratings %}
+
+{% block content %}
+
+    {% for ophtalmo_center in ophtalmo_centers %}
+        <h2> {{ophtalmo_center.name}} </h2>
+        <img src="{{ophtalmo_center.image.url}}" alt="{{ophtalmo_center.name}}", style="max-width: 250px;">
+        {% ratings ophtalmo_center %}
+    <a href="{{ophtalmo_center.get_absolute_url}}"> Voir le centre</a>
+    {% endfor %}
+
+{% endblock %}
